@@ -1,0 +1,72 @@
+<ion-view title="Favoritos">
+
+  <ion-nav-buttons side="left">
+    <a ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item nav-back-btn">
+      <i class="ion-android-arrow-back"></i>
+    </a>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div id="restaurant-content">
+      <div class="row">
+        <div class="col">
+          <md-tabs md-dynamic-height="" md-border-bottom="" class="padding-top">
+
+            <md-tab label="tab1">
+              <md-tab-label>Eventos</md-tab-label>
+              <md-content class="md-padding">
+
+                <md-list>
+                  <md-list-item class="md-3-line" ng-repeat="item in eventos">
+                    <i class="fa fa-calendar md-avatar"></i>
+                    <div class="md-list-item-text" layout="column" ng-click="navigateTo('app.eventos')">
+                      <h3>{{ item.titulo }}</h3>
+                      <p>{{ item.obs}}</p>
+                    </div>
+                  </md-list-item>
+                </md-list>
+
+              </md-content>
+            </md-tab>
+
+            <md-tab label="tab2">
+              <md-tab-label>Locais</md-tab-label>
+              <md-content class="md-padding">
+
+                <md-list>
+                  <md-list-item class="md-3-line" ng-repeat="item in locais">
+                    <img ng-src="{{item.imagem}}?{{$index}}" class="md-avatar" alt="{{item.usuario}}" />
+                    <div class="md-list-item-text" layout="column" ng-click="navigateTo('app.locais')">
+                      <h3>{{ item.usuario }}</h3>
+                      <p>{{ item.cidade}}</p>
+                    </div>
+                  </md-list-item>
+                </md-list>
+
+              </md-content>
+            </md-tab>
+
+            <md-tab label="tab2">
+              <md-tab-label>Grupos</md-tab-label>
+              <md-content class="md-padding">
+
+                <md-list>
+                  <md-list-item class="md-3-line" ng-repeat="item in grupos">
+                    <img ng-src="{{item.imagem}}?{{$index}}" class="md-avatar" alt="{{item.usuario}}" />
+                    <div class="md-list-item-text" layout="column" ng-click="navigateTo('app.grupo')">
+                      <h3>{{ item.usuario }}</h3>
+                      <p>{{ item.cidade}}</p>
+                    </div>
+                  </md-list-item>
+                </md-list>
+
+              </md-content>
+            </md-tab>
+
+          </md-tabs>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

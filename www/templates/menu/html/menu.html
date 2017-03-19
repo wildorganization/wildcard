@@ -1,0 +1,101 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-balanced  material-background-nav-bar">
+            <ion-nav-buttons side="left">
+                <a class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="toggleLeft()"></a>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <md-sidenav md-component-id="left" on-swipe-left="closeSideNav()" on-drag-left="closeSideNav()">
+        <!--menu section-->
+        <div class="material-background" id="toggle-menu-left-header">
+            <!--menu header section-->
+            <div class="menu-left-header">
+                <img class="user-img" src="img/profileAvatar.jpg">
+
+                <p>
+                  <span class="title">Olá, {{nome}}</span>
+                  <br/>
+                  <span class="sub-title">{{email}}</span>
+                </p>
+            </div><!--end menu header section-->
+        </div> <!--menu content section-->
+        <ion-content id="toggle-menu-left-content">
+
+            <!--If device is android application will present below code.-->
+            <!--It will disable animation to better performance on android.-->
+            <!--list section-->
+            <div ng-if="isAndroid" class="menu-list">
+
+                <div class="row menu-item"  ng-click="navigateTo('app.home')">
+                    <div class="col-33">
+                        <i class="fa fa-home"></i>
+                    </div>
+                    <div class="col-66">
+                        <span>Home</span>
+                    </div>
+                </div>
+
+              <div class="row menu-item"  ng-click="navigateTo('app.amigos')">
+                <div class="col-33">
+                  <i class="fa fa-users"></i>
+                </div>
+                <div class="col-66">
+                  <span>Meus Amigos</span>
+                </div>
+              </div>
+
+              <div class="row menu-item"  ng-click="navigateTo('app.favoritos')">
+                <div class="col-33">
+                  <i class="fa fa-heart"></i>
+                </div>
+                <div class="col-66">
+                  <span>Meus Favoritos</span>
+                </div>
+              </div>
+
+              <div class="row menu-item"  ng-click="navigateTo('app.perfil')">
+                <div class="col-33">
+                  <i class="fa fa-user"></i>
+                </div>
+                <div class="col-66">
+                  <span>Perfil</span>
+                </div>
+              </div>
+
+            </div>
+
+
+            <!--If device is not Android application will present below code.-->
+            <!--It will show animation when selecting row.-->
+            <md-list ng-if="!isAndroid">
+
+                <md-list-item class="menu-list-item" ng-click="navigateTo('app.home')">
+                  <i class="fa fa-home"></i>
+                    <span>Home</span>
+                </md-list-item>
+
+                <md-list-item class="menu-list-item" ng-click="navigateTo('app.amigos')">
+                    <i class="fa fa-users"></i>
+                    <span>Meus Amigos</span>
+                </md-list-item>
+
+                <md-list-item class="menu-list-item" ng-click="navigateTo('app.favoritos')">
+                    <i class="fa fa-heart"></i>
+                    <span>Meus Favoritos</span>
+                </md-list-item>
+
+                <md-list-item class="menu-list-item" ng-click="navigateTo('app.configuracoes')">
+                    <i class="fa fa-cog"></i>
+                    <span>Configurações</span>
+                </md-list-item>
+
+            </md-list>
+            <!--end list section-->
+        </ion-content><!--end menu content section-->
+        <!--end menu section-->
+
+    </md-sidenav>
+</ion-side-menus>

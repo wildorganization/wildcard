@@ -1,0 +1,47 @@
+<ion-view title="{{nomeForum}}">
+
+  <ion-nav-buttons side="left">
+    <a ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item nav-back-btn">
+      <i class="ion-android-arrow-back"></i>
+    </a>
+  </ion-nav-buttons>
+
+  <ion-content id="restaurant">
+
+    <div id="restaurant-content">
+      <div class="row ">
+        <div class="col promotions-header">
+          <h1>
+            {{nomeForum}}
+          </h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col menu-content-detail text-just">
+          {{descricaoForum}}
+        </div>
+      </div>
+
+      <md-divider></md-divider>
+
+
+      <div class="row">
+        <div class="col">
+          <md-list flex>
+            <md-list-item class="md-3-line" ng-repeat="item in msgs" ng-click="null">
+              <img ng-src="{{caminhoImagem}}{{item.imagem}}?{{$index}}" class="md-avatar" />
+              <div class="md-list-item-text" layout="column">
+                <h3>{{ item.nome }}</h3>
+                <p>{{ item.mensagem }}</p>
+              </div>
+            </md-list-item>
+          </md-list>
+        </div>
+      </div>
+
+
+    </div>
+
+  </ion-content>
+</ion-view>

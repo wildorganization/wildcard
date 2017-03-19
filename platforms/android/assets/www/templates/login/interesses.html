@@ -1,0 +1,54 @@
+<!--View Information-->
+<!--View name : Fake Login-->
+<!--State name : app.fakeLogin-->
+<!--URL : #app/fakeLogin-->
+
+<ion-view title="Interesses">
+  <!--left button on navigation bar-->
+  <ion-nav-buttons side="left">
+    <a ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item nav-back-btn">
+      <i class="ion-android-arrow-back"></i>
+    </a>
+  </ion-nav-buttons><!--end left button on navigation bar-->
+
+  <!--login content section-->
+  <ion-content id="social-login" class="bg-white">
+    <!--fake login form section-->
+    <form class="fakeLogin-form" name="SignInForm" novalidate>
+      <div>
+        <img src="img/app_icon.png"/>
+      </div>
+      <div class="sub-header">Selecione os seus Interesses</div>
+
+      <div id="fakeLogin">
+
+        <div ng-controller='AppCtrl as vm'>
+          <md-chips ng-model="vm.selectedFoods" md-autocomplete-snap="" md-transform chip="vm.transformChip($chip)" md-require-match=''>
+            <md-autocomplete md-selected-item='vm.selectedItem'
+                             md-search-text='vm.searchText'
+                             md-items='item in vm.querySearchDeferred(vm.searchText)'
+                             md-item-text='item.tag'
+                             placeholder="Procure por um interesse">>
+              <span md-highlight-text='vm.searchText'>{{item.tag}}</span>
+            </md-autocomplete>
+            <md-chip-template>
+        <span>
+          <strong>{{$chip.tag}}</strong>
+        </span>
+            </md-chip-template>
+          </md-chips>
+        </div>
+
+      </div>
+
+
+      <div style="margin-top: 50px;">
+        <a class="md-raised social-button md-button md-default-theme btn-color" ng-click="salvaInteresses()">
+          Cadastrar
+        </a>
+      </div>
+
+
+    </form> <!--end fake login form section-->
+  </ion-content><!--end login content section-->
+</ion-view>

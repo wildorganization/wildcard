@@ -1,0 +1,64 @@
+<!--View Information-->
+<!--View name : Logar-->
+<!--State name : app.logar-->
+<!--URL : #app/logar-->
+
+<ion-view title="Perfil do Usuário">
+
+  <ion-content id="social-sign-up-content">
+    <div class="app-icon">
+      <img src="img/app_icon.png">
+    </div>
+
+    <form name="SignInForm" novalidate>
+
+      <md-input-container md-no-float class="md-block">
+        <md-icon>
+          <i class="fa fa-2x fa-user" aria-hidden="true"></i>
+        </md-icon>
+        <input ng-model="dadosperfil.nome" type="text" placeholder="Nome">
+      </md-input-container>
+
+      <md-input-container md-no-float class="md-block">
+        <md-icon>
+          <i class="fa fa-2x fa-user" aria-hidden="true"></i>
+        </md-icon>
+        <input ng-model="dadosperfil.login" type="text" placeholder="Login">
+      </md-input-container>
+
+      <md-input-container md-no-float class="md-block">
+        <md-icon>
+          <i class="fa fa-2x fa-lock" aria-hidden="true"></i>
+        </md-icon>
+        <input ng-model="dadosperfil.senha" type="password" placeholder="Senha">
+      </md-input-container>
+
+      <md-input-container md-no-float class="md-block">
+        <md-icon>
+          <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
+        </md-icon>
+        <input ng-model="dadosperfil.email" type="text" placeholder="E-mail">
+      </md-input-container>
+
+      <md-input-container md-no-float class="md-block">
+        <md-icon>
+          <i class="fa fa-2x fa-user" aria-hidden="true"></i>
+        </md-icon>
+        <input ng-model="dadosperfil.descricao" type="text" placeholder="Descrição">
+      </md-input-container>
+
+      <md-input-container md-no-float class="md-block">
+        <md-icon>
+          <i class="fa fa-2x fa-map-marker" aria-hidden="true"></i>
+        </md-icon>
+        <input ng-model="dadosperfil.cidade" type="text" placeholder="Cidade">
+      </md-input-container>
+
+      <a class="md-raised social-button md-button md-default-theme btn-color" ng-click="updatePerfil()">
+        Atualizar
+      </a>
+
+    </form>
+
+  </ion-content><!--end login content section-->
+</ion-view>

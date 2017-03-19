@@ -1,0 +1,77 @@
+<ion-view title="Home">
+  <ion-content id="home" class="bg-white">
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" ng-model="busca.interesse" ng-enter="navigateTo('app.busca', {{busca}})" placeholder="O que você deseja hoje?">
+      </label>
+    </div>
+
+    <div ng-cloak="" class="tabhome">
+      <md-content>
+        <md-subheader class="md-primary">Sugestões do Dia</md-subheader>
+      </md-content>
+
+      <div class="list">
+        <a class="item item-thumbnail-left"ng-click="navigateTo('app.locais',sugestoes[0].empresa[0])">
+          <img src="img/ponta.png">
+          <h2>{{sugestoes[0].empresa[0].nome}}</h2>
+          <p>{{sugestoes[0].empresa[0].tag}}</p>
+        </a>
+      </div>
+
+      <div class="list">
+        <a class="item item-thumbnail-left" ng-click="navigateTo('app.eventos',sugestoes[1].evento[0])">
+          <img src="img/ponta.png">
+          <h2>{{sugestoes[1].evento[0].nome}}</h2>
+          <p>{{sugestoes[1].evento[0].tag}}</p>
+        </a>
+      </div>
+
+      <div class="list">
+        <a class="item item-thumbnail-left" ng-click="navigateTo('app.grupo',sugestoes[2].grupo[0])">
+          <img src="img/ponta.png">
+          <h2>{{sugestoes[2].grupo[0].nome}}</h2>
+          <p>{{sugestoes[2].grupo[0].tag}}</p>
+        </a>
+      </div>
+
+
+
+
+    </div>
+  </ion-content>
+
+  <div class="footer-fab-bar">
+    <a class="md-button md-accent md-fab fab-footer" aria-label="Add" ng-click="showGridBottomSheet($event)">
+      <i class="icon ion-plus"></i>
+    </a>
+  </div>
+
+</ion-view>
+
+
+<script type="text/ng-template" id="ui-grid-bottom-sheet-template">
+  <md-bottom-sheet class="md-grid">
+    <!--list section-->
+    <md-list id="bottom-sheet-grid-md-list">
+
+      <md-list-item>
+        <a class="md-grid-item-content" ng-click="navigateTo('app.novoevento')">
+          <i class="icon ion-plus"></i>
+          <div class="md-grid-text"> Novo Evento</div>
+        </a>
+      </md-list-item>
+
+      <md-list-item>
+        <a class="md-grid-item-content" ng-click="navigateTo('app.novolocal')">
+          <i class="icon ion-plus"></i>
+          <div class="md-grid-text"> Novo Local</div>
+        </a>
+      </md-list-item>
+
+
+    </md-list>
+    <!--end list section-->
+  </md-bottom-sheet>
+</script>

@@ -1,0 +1,63 @@
+<ion-view title="{{nomeUsuario}}" id="expense-dashboard">
+
+  <ion-nav-buttons side="left">
+    <a ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item nav-back-btn">
+      <i class="ion-android-arrow-back"></i>
+    </a>
+  </ion-nav-buttons><!--end left button on navigation bar-->
+
+  <md-toolbar class="bar-subheader md-tall md-primary toolbar-expense">
+    <div>
+      <img src="img/60.jpeg" class="user-img"/>
+
+      <h1>{{nomeUsuario}}</h1>
+
+      <p class="status-usuario">{{descricaoUsuario}}</p>
+    </div>
+    <a class="md-button md-accent md-fab fab-toolbar-medium" aria-label="Add">
+      <i class="icon ion-plus"></i>
+    </a>
+  </md-toolbar>
+
+  <!--expense content section-->
+  <ion-content id="expense-dashboard-content">
+
+    <div class="list-expense-menu">
+
+      <div class="list-expense-menu-item">
+        <div class="row">
+          <div class="col-20">
+            <i class="fa fa-user"></i>
+          </div>
+          <div class="col-80 menu">
+            <p class="header">Cidade: {{cidadeUsuario}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-expense-menu-item">
+        <div class="row">
+          <div class="col-20">
+            <i class="fa fa-envelope"></i>
+          </div>
+          <div class="col-80 menu">
+            <p class="header">E-mail: {{emailUsuario}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-expense-menu-item">
+        <div class="row">
+          <div class="col-20">
+            <i class="fa fa-envelope"></i>
+          </div>
+          <div class="col-80 menu">
+            <p class="header">E-mail: {{emailUsuario}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </ion-content><!--end expense content section-->
+</ion-view>

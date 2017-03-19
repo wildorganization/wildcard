@@ -1,0 +1,55 @@
+<ion-view title="Meus Amigos">
+
+  <ion-nav-buttons side="left">
+    <a ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item nav-back-btn">
+      <i class="ion-android-arrow-back"></i>
+    </a>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div id="restaurant-content">
+      <div class="row">
+        <div class="col">
+        <md-tabs md-dynamic-height="" md-border-bottom="" class="padding-top">
+
+          <md-tab label="tab1">
+            <md-tab-label>Amigos</md-tab-label>
+            <md-content class="md-padding">
+
+              <md-list>
+                <md-list-item class="md-3-line" ng-repeat="item in pessoas">
+                  <img ng-src="{{item.imagem}}?{{$index}}" class="md-avatar" alt="{{item.usuario}}" />
+                  <div class="md-list-item-text" layout="column" ng-click="navigateTo('app.usuario')">
+                    <h3>{{ item.usuario }}</h3>
+                    <p>{{ item.cidade}}</p>
+                  </div>
+                </md-list-item>
+              </md-list>
+
+            </md-content>
+          </md-tab>
+
+          <md-tab label="tab2">
+            <md-tab-label>Conversas</md-tab-label>
+            <md-content class="md-padding">
+
+              <md-list>
+                <md-list-item class="md-3-line" ng-repeat="item in pessoas">
+                  <img ng-src="{{item.imagem}}?{{$index}}" class="md-avatar" alt="{{item.usuario}}" />
+                  <div class="md-list-item-text" layout="column" ng-click="navigateTo('app.usuario')">
+                    <h3>{{ item.usuario }}</h3>
+                    <p>{{ item.cidade}}</p>
+                  </div>
+                </md-list-item>
+              </md-list>
+
+            </md-content>
+          </md-tab>
+
+        </md-tabs>
+      </div>
+    </div>
+    </div>
+  </ion-content>
+
+  </ion-view>

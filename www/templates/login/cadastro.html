@@ -1,0 +1,65 @@
+<!--View Information-->
+<!--View name : Fake Sign Up-->
+<!--State name : app.fakeSignUp-->
+<!--URL : #app/fakeSignUp-->
+
+<ion-view title="Cadastro">
+  <!--left button on navigation bar-->
+  <ion-nav-buttons side="left">
+    <a ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item nav-back-btn">
+      <i class="ion-android-arrow-back"></i>
+    </a>
+  </ion-nav-buttons><!--end left button on navigation bar-->
+
+  <!--social sign up section-->
+  <ion-content id="social-sign-up-content">
+    <div class="app-icon">
+      <img src="img/app_icon.png" class="md-card-image">
+    </div>
+
+    <!--input section-->
+    <md-input-container md-no-float="">
+      <div>
+        <input class="user-name" placeholder="Nome" ng-model="dadoscadastro.nome">
+      </div>
+    </md-input-container>
+
+    <md-input-container md-no-float="">
+      <div>
+        <input class="user-name" placeholder="Cidade" ng-model="dadoscadastro.cidade">
+      </div>
+    </md-input-container>
+
+    <!--input section-->
+    <md-input-container md-no-float="">
+      <div>
+        <input class="user-name" placeholder="Usuário" ng-model="dadoscadastro.usuario">
+      </div>
+    </md-input-container>
+
+
+    <md-input-container md-no-float="">
+      <div>
+        <input class="user-name" placeholder="E-mail" ng-model="dadoscadastro.email">
+      </div>
+    </md-input-container>
+
+
+    <md-input-container md-no-float="">
+      <div>
+        <input type="password" class="user-name" placeholder="Senha" ng-model="dadoscadastro.senha">
+      </div>
+    </md-input-container>
+
+    <md-radio-group ng-model="dadoscadastro.sexo">
+      <md-radio-button value="M">Masculino</md-radio-button>
+      <md-radio-button value="F"> Feminino </md-radio-button>
+    </md-radio-group>
+
+
+    <a class="md-raised social-button md-button md-default-theme btn-color" href="#" ng-click="salvaCadastro()">
+      Cadastrar
+    </a>
+
+  </ion-content><!--end social sign up section-->
+</ion-view>
